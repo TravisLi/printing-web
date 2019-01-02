@@ -1,0 +1,25 @@
+<!-- Generated template for the ProductBoxComponent component -->
+<ion-card>
+
+  <ion-card-content
+  [class.first-class] = "classify() === '1'"
+  [class.second-class] = "classify() === '2'"
+  [class.third-class] = "classify() === '3'"
+  no-padding>
+    <ion-grid>
+      <ion-row>
+        <ion-col col-12 col-lg-6>
+          <h2>
+            <ion-icon name="watch" color="gWhite">&nbsp;{{product.name}}</ion-icon>
+          </h2>
+        </ion-col>
+        <ion-col col-12 col-lg-6>
+          <h2>
+            <ion-icon name="cash" color="gWhite">&nbsp;{{product.price | currency}}</ion-icon>
+          </h2>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-card-content>
+
+</ion-card>
