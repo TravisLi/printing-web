@@ -6,13 +6,13 @@
 -->
 <ion-header>
 
-  <ion-navbar>
-    <ion-title>product-selection</ion-title>
-  </ion-navbar>
+  <nav-bar title="產品選擇"></nav-bar>
 
 </ion-header>
 
 
 <ion-content padding>
-
+  <div *ngFor="let product of products" no-margin>
+    <product-box [product]="product"></product-box>
+  </div>
 </ion-content>

@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { AuthService } from '../../providers/auth-service/auth-service';
+import { Product } from '../../models/product';
 
 /**
  * Generated class for the ProductSelectionPage page.
@@ -15,6 +16,8 @@ import { AuthService } from '../../providers/auth-service/auth-service';
   templateUrl: 'product-selection.html',
 })
 export class ProductSelectionPage {
+
+  public products:Product[];
 
   constructor(
     public navCtrl: NavController, 
