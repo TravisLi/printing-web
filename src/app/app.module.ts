@@ -18,6 +18,7 @@ import { CustomerOrderPageModule } from '../pages/customer-order/customer-order.
 import { AuthService } from '../providers/auth-service/auth-service';
 import { CustomerService } from '../providers/customer-service/customer-service';
 import { OrderService } from '../providers/order-service/order-service';
+import { ProductServiceProvider } from '../providers/product-service/product-service';
 
 @NgModule({
   declarations: [
@@ -45,6 +46,7 @@ import { OrderService } from '../providers/order-service/order-service';
     CustomerService,
     OrderService,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
+    ProductServiceProvider,
   ]
 })
 export class AppModule {}
