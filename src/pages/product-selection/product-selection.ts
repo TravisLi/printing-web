@@ -1,7 +1,9 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { AuthService } from '../../providers/auth-service/auth-service';
+import { ProductService } from '../../providers/product-service/product-service';
 import { Product } from '../../models/product';
+import { ProductCategory } from '../../models/product-category';
 
 /**
  * Generated class for the ProductSelectionPage page.
@@ -22,7 +24,11 @@ export class ProductSelectionPage {
   constructor(
     public navCtrl: NavController, 
     public navParams: NavParams,
-    public authService: AuthService) {
+    public authService: AuthService,
+    public productService: ProductService) {
+      let productCat:ProductCategory = navParams.get('productCat');
+
+
   }
 
   ionViewDidLoad() {

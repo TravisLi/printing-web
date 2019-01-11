@@ -27,7 +27,7 @@ export class ProductCategorySelectionPage {
 
   public selectProductCategory(productCat:ProductCategory){
     this.navCtrl.push('ProductSelection',{
-      productCategory: productCat
+      productCat: productCat
     });
   }
 

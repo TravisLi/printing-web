@@ -12,7 +12,7 @@ import { ENV } from '@app/env';
   and Angular DI.
 */
 @Injectable()
-export class ProductServiceProvider {
+export class ProductService {
 
   private productCatUrl:string = ENV.restUrl + "/get/productCat";
   private productUrl:string = ENV.restUrl + "/get/product"
