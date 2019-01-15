@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { ProductCategory } from 
+import { IonicPage, NavController, NavParams, ToastController, Platform } from 'ionic-angular';
+import { ProductCategory } from '../../models/product-category'
+import { ProductService } from '../../providers/product-service/product-service';
 
 /**
  * Generated class for the ProductCategorySelectionPage page.
@@ -16,9 +17,35 @@ import { ProductCategory } from
 })
 export class ProductCategorySelectionPage {
 
+  public productCategorys:ProductCategory[];
+
   constructor(
     public navCtrl: NavController, 
-    public navParams: NavParams) {
+    public navParams: NavParams,
+    private platform: Platform,
+    private toastCtrl:ToastController,
+    private productService: ProductService) {
+      this.productService.getProductCategroy().subscribe(productCategorys=>{
+        if(productCategorys){
+          this.productCategorys = productCategorys;
+        }else{
+          let toast = this.toastCtrl.create({
+            message: '找不到產品目錄',
+            duration: 3000,
+            position: 'top'
+          });
+          toast.present();
+        }
+        
+        
+      },error=>{
+        let toast = this.toastCtrl.create({
+          message: '伺服器錯誤',
+          duration: 3000,
+          position: 'top'
+        });
+        toast.present();
+      })
   }
 
   ionViewDidLoad() {

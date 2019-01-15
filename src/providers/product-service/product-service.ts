@@ -14,7 +14,7 @@ import { ENV } from '@app/env';
 @Injectable()
 export class ProductService {
 
-  private productCatUrl:string = ENV.restUrl + "/get/productCat";
+  private productCatUrl:string = ENV.restUrl + "/get/productCategory";
   private productUrl:string = ENV.restUrl + "/get/product"
 
   constructor(public http: HttpClient) {

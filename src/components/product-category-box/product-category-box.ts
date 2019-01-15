@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { ProductCategory } from 'models/product-category';
+import { ProductCategory } from '../../models/product-category';
 
 /**
  * Generated class for the ProductCategoryBoxComponent component.
