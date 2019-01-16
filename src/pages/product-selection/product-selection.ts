@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams,ToastController } from 'ionic-angular';
 import { AuthService } from '../../providers/auth-service/auth-service';
 import { ProductService } from '../../providers/product-service/product-service';
 import { Product } from '../../models/product';
@@ -24,12 +24,30 @@ export class ProductSelectionPage {
   constructor(
     public navCtrl: NavController, 
     public navParams: NavParams,
-    public authService: AuthService,
-    public productService: ProductService) {
+    private authService: AuthService,
+    private toastCtrl:ToastController,
+    private productService: ProductService) {
       let productCat:ProductCategory = navParams.get('productCat');
-
-
-  }
+      this.productService.getProduct(productCat.id).subscribe(products=>{
+        if(products){
+          this.products = products;
+        }else{
+          let toast = this.toastCtrl.create({
+            message: '找不到產品',
+            duration: 3000,
+            position: 'top'
+          });
+          toast.present();
+        }
+        },error=>{
+          let toast = this.toastCtrl.create({
+            message: '伺服器錯誤',
+            duration: 3000,
+            position: 'top'
+          });
+          toast.present();
+        })
+      }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad ProductSelectionPage');

@@ -3,12 +3,12 @@ import { Material } from "./material";
 
 export class Product{
     id:number;
-    productCategroy:ProductCategory;
+    name:string;
     material:Material;
     height:number;
     width:number;
     baseQuantity:number;
-    name:string;
     unit:string;
     price:number;
+    productCategroy:ProductCategory;
 }

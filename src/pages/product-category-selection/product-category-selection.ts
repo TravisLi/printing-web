@@ -53,7 +53,7 @@ export class ProductCategorySelectionPage {
   }
 
   public selectProductCategory(productCat:ProductCategory){
-    this.navCtrl.push('ProductSelection',{
+    this.navCtrl.push('ProductSelectionPage',{
       productCat: productCat
     });
   }

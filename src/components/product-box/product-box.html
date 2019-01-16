@@ -1,7 +1,21 @@
 <!-- Generated template for the ProductBoxComponent component -->
 <ion-card>
-
-  <img src={{product.image}}/>
   <div class="card-title">{{product.name}}</div>
-  
+  <ion-item>
+    <span item-start>大小 (H x W)</span>
+    <span>{{product.height}} x {{product.width}}</span>
+  </ion-item>
+  <ion-item>
+    <span item-start>物料</span>
+    <span>{{product.material.name}}</span>
+  </ion-item>
+  <ion-item>
+    <span item-start>數量</span>
+    <span>{{product.baseQuantity}}{{product.unit}}</span>
+  </ion-item>
+  <ion-item>
+    <span item-start>價格</span>
+    <span>{{product.price}}</span>
+  </ion-item>
+  <button ion-button>選擇</button>
 </ion-card>

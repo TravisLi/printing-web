@@ -1,7 +1,7 @@
 import { Product } from './product'
 
 export class ProductCategory{
-    id:string;
+    id:number;
     name:string;
     image:string;
     products:Product[];
