@@ -6,13 +6,44 @@
 -->
 <ion-header>
 
-  <ion-navbar>
-    <ion-title>order-item-add</ion-title>
-  </ion-navbar>
+  <nav-bar title="加入產品"></nav-bar>
 
 </ion-header>
 
 
 <ion-content padding>
-
+  <ion-card>
+    <div class="card-title">{{orderItem.product.name}}</div>
+    <ion-item>
+      <span item-start>大小 (H x W)</span>
+      <span>{{orderItem.product.height}} x {{orderItem.product.width}}</span>
+    </ion-item>
+    <ion-item>
+      <span item-start>物料</span>
+      <span>{{orderItem.product.material.name}}</span>
+    </ion-item>
+    <ion-item>
+      <span item-start>數量</span>
+      <span>{{orderItem.product.baseQuantity}}{{orderItem.product.unit}}</span>
+    </ion-item>
+    <ion-item>
+      <span item-start>價格</span>
+      <span>{{orderItem.product.price}}</span>
+    </ion-item>
+    <button ion-button (click)="selectProduct()">選擇</button>
+  </ion-card>
+    <ion-item>
+      <ion-label>數量</ion-label>
+      <ion-input type="text" required [(ngModel)]="orderItem.quantity" name="quantity"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>上傳樣式檔案</ion-label>
+      <ion-input type="file" required [(ngModel)]="orderItem.uploadFile" name="uploadFile"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>備註</ion-label>
+      <ion-textarea [(ngModel)]="orderItem.remark"></ion-textarea>
+    </ion-item>
+    <button ion-button (click)="confirm()" block>確定</button>
+    <button ion-button >取消</button>
 </ion-content>

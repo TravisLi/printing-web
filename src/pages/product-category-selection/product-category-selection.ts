@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, ToastController, Platform } from 'ionic-angular';
 import { ProductCategory } from '../../models/product-category'
-import { ProductService } from '../../providers/product-service/product-service';
+import { ProductCategoryService } from '../../providers/product-category-service/product-category-service';
 
 /**
  * Generated class for the ProductCategorySelectionPage page.
@@ -24,8 +24,8 @@ export class ProductCategorySelectionPage {
     public navParams: NavParams,
     private platform: Platform,
     private toastCtrl:ToastController,
-    private productService: ProductService) {
-      this.productService.getProductCategroy().subscribe(productCategorys=>{
+    private productCatService: ProductCategoryService) {
+      this.productCatService.getProductCat().subscribe(productCategorys=>{
         if(productCategorys){
           this.productCategorys = productCategorys;
         }else{

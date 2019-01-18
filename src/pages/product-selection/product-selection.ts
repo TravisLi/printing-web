@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams,ToastController } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, ToastController } from 'ionic-angular';
 import { AuthService } from '../../providers/auth-service/auth-service';
 import { ProductService } from '../../providers/product-service/product-service';
 import { Product } from '../../models/product';
@@ -51,6 +51,12 @@ export class ProductSelectionPage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad ProductSelectionPage');
+  }
+
+  public selectProduct(product:Product){
+    this.navCtrl.push('OrderItemAddPage',{
+      product: product
+    });
   }
 
 }
