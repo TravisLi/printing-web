@@ -13,6 +13,6 @@
 <ion-content padding>
     <ion-searchbar [(ngModel)]="nameToSearch" (ionInput)="searchProduct()"></ion-searchbar>
   <div *ngFor="let product of products" no-margin>
-    <product-box [product]="product" (selectEvent)="selectProduct($event)"></product-box>
+<product-box-select [product]="product" (selectEvent)="selectProduct($event)"></produ    ct-box-select>
   </div>
 </ion-content>

@@ -14,17 +14,10 @@ import { Product } from '../../models/product'
 export class ProductBoxComponent {
 
   @Input()
-  product: Product;
-
-  @Output()
-  selectEvent = new EventEmitter<Product>();
+  protected product: Product;
 
   constructor() {
     console.log('Hello ProductBoxComponent Component');
-  }
-
-  public selectProduct():void{
-    this.selectEvent.emit(this.product);
   }
 
 }

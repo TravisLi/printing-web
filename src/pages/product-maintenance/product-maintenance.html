@@ -6,13 +6,15 @@
 -->
 <ion-header>
 
-  <ion-navbar>
-    <ion-title>product-maintenance</ion-title>
-  </ion-navbar>
+  <nav-bar title='產品搜尋'></nav-bar>
 
 </ion-header>
 
 
 <ion-content padding>
-
+  <ion-searchbar [(ngModel)]="nameToSearch" (ionInput)="searchProductss()"></ion-searchbar>
+  <button ion-button (click)="addProduct()">新增</button>
+  <div *ngFor="let product of products">
+    <product-box-edit [product]="product" (updateEvent)="updateProduct($event)" (delEvent)="delProduct($event)"></product-box-edit>
+  </div>
 </ion-content>

@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { Product } from '../../models/product';
+import { ProductService } from '../../providers/product-service/product-service';
 
 /**
  * Generated class for the ProductMaintenanceEditPage page.
@@ -15,11 +17,29 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class ProductMaintenanceEditPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  product:Product
+
+  constructor(
+    public navCtrl: NavController, 
+    public navParams: NavParams,
+    public productService: ProductService
+    ) {
+      let product:Product = navParams.get('product');
+      if(product){
+        this.product = product;
+      }
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad ProductMaintenanceEditPage');
+  }
+
+  public cancel():void{
+    this.navCtrl.pop();
+  }
+
+  public updateProduct():void{
+    this.productService.updateProduct(this.product);
   }
 
 }

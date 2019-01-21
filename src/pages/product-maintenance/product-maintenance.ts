@@ -51,7 +51,7 @@ export class ProductMaintenancePage {
     }
   }
 
-  public selectProduct(product:Product){
+  public updateProduct(product:Product){
     this.navCtrl.push(ProductMaintenanceEditPage, {product: product});
   }
   
