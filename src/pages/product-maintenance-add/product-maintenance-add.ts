@@ -1,7 +1,10 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { Product } from '../../models/product';
+import { Material } from '../../models/material';
+import { ProductCategory } from '../../models/product-category';
 import { ProductService } from '../../providers/product-service/product-service';
+import { ProductCategoryService } from '../../providers/product-category-service/product-category-service';
 /**
  * Generated class for the ProductMaintenanceAddPage page.
  *
@@ -16,17 +19,17 @@ import { ProductService } from '../../providers/product-service/product-service'
 })
 export class ProductMaintenanceAddPage {
 
-  product:Product
+  private product:Product
+  private materials:Material[];
+  private productCategorys:ProductCategory[];
 
   constructor(
     public navCtrl: NavController, 
     public navParams: NavParams,
     public productService: ProductService
     ) {
-      let product:Product = navParams.get('product');
-      if(product){
-        this.product = product;
-      }
+      this.product = new Product();
+      this.product.name = "";
   }
 
   ionViewDidLoad() {

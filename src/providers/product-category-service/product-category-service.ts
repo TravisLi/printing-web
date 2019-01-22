@@ -19,8 +19,8 @@ export class ProductCategoryService {
     console.log('Hello ProductCategoryServiceProvider Provider');
   }
 
-  public getProductCat():Observable<ProductCategory[]> {
-    let parm:string = `/get`;
+  public getAllProductCat():Observable<ProductCategory[]> {
+    let parm:string = `/all/get`;
     let reqUrl:string = this.productCatUrl + parm;
     return this.http.get<ProductCategory[]>(reqUrl);
   }

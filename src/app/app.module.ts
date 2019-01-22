@@ -13,14 +13,17 @@ import { LoginPageModule } from '../pages/login/login.module';
 import { ChangePasswordPageModule } from '../pages/change-password/change-password.module';
 import { CustomerRegisterPageModule } from '../pages/customer-register/customer-register.module';
 import { CustomerOrderPageModule } from '../pages/customer-order/customer-order.module';
-import { ProductCategorySelectionPageModule } from '../pages/product-category-selection/product-category-selection.module'
-import { ProductSelectionPageModule } from '../pages/product-selection/product-selection.module'
+import { ProductCategorySelectionPageModule } from '../pages/product-category-selection/product-category-selection.module';
+import { ProductSelectionPageModule } from '../pages/product-selection/product-selection.module';
+import { ProductMaintenanceAddPageModule } from '../pages/product-maintenance-add/product-maintenance-add.module';
+import { ProductMaintenanceEditPageModule } from '../pages/product-maintenance-edit/product-maintenance-edit.module';
 
 import { AuthService } from '../providers/auth-service/auth-service';
 import { CustomerService } from '../providers/customer-service/customer-service';
 import { OrderService } from '../providers/order-service/order-service';
 import { ProductService } from '../providers/product-service/product-service';
 import { ProductCategoryService } from '../providers/product-category-service/product-category-service';
+import { MaterialServiceProvider } from '../providers/material-service/material-service';
 
 @NgModule({
   declarations: [
@@ -36,7 +39,9 @@ import { ProductCategoryService } from '../providers/product-category-service/pr
     CustomerRegisterPageModule,
     CustomerOrderPageModule,
     ProductCategorySelectionPageModule,
-    ProductSelectionPageModule
+    ProductSelectionPageModule,
+    ProductMaintenanceAddPageModule,
+    ProductMaintenanceEditPageModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -51,6 +56,7 @@ import { ProductCategoryService } from '../providers/product-category-service/pr
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     ProductService,
     ProductCategoryService,
+    MaterialServiceProvider,
   ]
 })
 export class AppModule {}

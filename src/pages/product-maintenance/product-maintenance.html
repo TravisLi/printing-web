@@ -12,7 +12,7 @@
 
 
 <ion-content padding>
-  <ion-searchbar [(ngModel)]="nameToSearch" (ionInput)="searchProductss()"></ion-searchbar>
+  <ion-searchbar [(ngModel)]="nameToSearch" (ionInput)="searchProducts()"></ion-searchbar>
   <button ion-button (click)="addProduct()">新增</button>
   <div *ngFor="let product of products">
     <product-box-edit [product]="product" (updateEvent)="updateProduct($event)" (delEvent)="delProduct($event)"></product-box-edit>

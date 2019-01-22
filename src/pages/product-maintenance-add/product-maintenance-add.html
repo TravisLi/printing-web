@@ -14,36 +14,36 @@
 <ion-content padding>
   <ion-item>
     <span item-start>產品名稱</span>
-    <ion-input name="name" type="text" [(ngModel)]="product.name" #name="ngModel" required></ion-input>
+    <ion-input name="product_name" type="text" [(ngModel)]="product.name" #pName="ngModel" required></ion-input>
   </ion-item>
   <ion-item>
     <span item-start>高度</span>
-    <ion-input name="height" type="text" [(ngModel)]="product.height" #height="ngModel" required></ion-input>
+    <ion-input name="height" type="text" [(ngModel)]="product.height" #pHeight="ngModel" required></ion-input>
   </ion-item>
   <ion-item>
     <span item-start>闊度</span>
-    <ion-input name="width" type="text" [(ngModel)]="product.width" #width="ngModel" required></ion-input>
+    <ion-input name="width" type="text" [(ngModel)]="product.width" #pWidth="ngModel" required></ion-input>
   </ion-item>
-  <ion-item>
+  <!--<ion-item>
     <span item-start>物料</span>
     <span>{{product.material.name}}</span>
-  </ion-item>
+  </ion-item>-->
   <ion-item>
     <span item-start>基本數量</span>
-    <ion-input name="baseQuantity" type="text" [(ngModel)]="product.baseQuantity" #baseQuantity="ngModel" required></ion-input>
+    <ion-input name="baseQuantity" type="text" [(ngModel)]="product.baseQuantity" #pBaseQuantity="ngModel" required></ion-input>
   </ion-item>
   <ion-item>
     <span item-start>價格</span>
-    <ion-input name="price" type="text" [(ngModel)]="product.price" #width="ngModel" required></ion-input>
+    <ion-input name="price" type="text" [(ngModel)]="product.price" #pPrice="ngModel" required></ion-input>
   </ion-item>
   <ion-item>
     <span item-start>單位</span>
-    <ion-input name="unit" type="text" [(ngModel)]="product.unit" #unit="ngModel" required></ion-input>
+    <ion-input name="unit" type="text" [(ngModel)]="product.unit" #pUnit="ngModel" required></ion-input>
   </ion-item>
-  <ion-item>
+  <!--<ion-item>
     <span item-start></span>
     <span>{{product.productCategory.name}}</span>
-  </ion-item>
+  </ion-item>-->
   <button ion-button (click)="addProduct()">新增</button>
   <button ion-button (click)="cancel()">取消</button>
 </ion-content>
