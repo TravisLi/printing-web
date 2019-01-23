@@ -23,7 +23,7 @@ import { CustomerService } from '../providers/customer-service/customer-service'
 import { OrderService } from '../providers/order-service/order-service';
 import { ProductService } from '../providers/product-service/product-service';
 import { ProductCategoryService } from '../providers/product-category-service/product-category-service';
-import { MaterialServiceProvider } from '../providers/material-service/material-service';
+import { MaterialService } from '../providers/material-service/material-service';
 
 @NgModule({
   declarations: [
@@ -56,7 +56,7 @@ import { MaterialServiceProvider } from '../providers/material-service/material-
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     ProductService,
     ProductCategoryService,
-    MaterialServiceProvider,
+    MaterialService,
   ]
 })
 export class AppModule {}

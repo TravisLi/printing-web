@@ -24,10 +24,12 @@
     <span item-start>闊度</span>
     <ion-input name="width" type="text" [(ngModel)]="product.width" #pWidth="ngModel" required></ion-input>
   </ion-item>
-  <!--<ion-item>
-    <span item-start>物料</span>
-    <span>{{product.material.name}}</span>
-  </ion-item>-->
+  <ion-item>
+    <ion-label>物料</ion-label>
+    <ion-select [(ngModel)]="product.material" [compareWith]="compareFn">
+        <ion-option *ngFor="let m of materials" [value]="m">{{m.name}}</ion-option>
+    </ion-select>
+  </ion-item>
   <ion-item>
     <span item-start>基本數量</span>
     <ion-input name="baseQuantity" type="text" [(ngModel)]="product.baseQuantity" #pBaseQuantity="ngModel" required></ion-input>
@@ -40,10 +42,12 @@
     <span item-start>單位</span>
     <ion-input name="unit" type="text" [(ngModel)]="product.unit" #pUnit="ngModel" required></ion-input>
   </ion-item>
-  <!--<ion-item>
-    <span item-start></span>
-    <span>{{product.productCategory.name}}</span>
-  </ion-item>-->
+  <ion-item>
+    <ion-label>產品類型</ion-label>
+    <ion-select [(ngModel)]="product.productCategory" [compareWith]="compareFn">
+      <ion-option *ngFor="let pc of productCategorys" [value]="pc">{{pc.name}}</ion-option>
+    </ion-select>
+  </ion-item>
   <button ion-button (click)="addProduct()">新增</button>
   <button ion-button (click)="cancel()">取消</button>
 </ion-content>
