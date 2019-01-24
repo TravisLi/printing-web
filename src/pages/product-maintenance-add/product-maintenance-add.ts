@@ -34,29 +34,29 @@ export class ProductMaintenanceAddPage {
       this.product = new Product();
       this.product.material = new Material();
       this.product.productCategroy = new ProductCategory();
-      this.materials=[];
-      this.productCategorys=[];
+      
+      this.materialService.getAll().subscribe(materials=>{
+        if(materials){
+          console.info("Material is found")
+          this.materials = materials;
+        }else{
+          console.warn("No material is found")
+        }
+      })
+  
+      this.productCategoryService.getAll().subscribe(productCategorys=>{
+        if(productCategorys){
+          console.info("Product Category is found")
+          this.productCategorys = productCategorys;
+        }else{
+          console.warn("No productCategory is found")
+        }
+      })
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad ProductMaintenanceAddPage');
-    this.materialService.getAllMaterial().subscribe(materials=>{
-      if(materials){
-        console.info("Material is found")
-        this.materials = materials;
-      }else{
-        console.warn("No material is found")
-      }
-    })
-
-    this.productCategoryService.getAllProductCat().subscribe(productCategorys=>{
-      if(productCategorys){
-        console.info("Product Category is found")
-        this.productCategorys = productCategorys;
-      }else{
-        console.warn("No productCategory is found")
-      }
-    })
+    
   }
 
   public compareFn(o1: any, o2: any): boolean {
@@ -67,9 +67,9 @@ export class ProductMaintenanceAddPage {
     this.navCtrl.pop();
   }
 
-  public addProduct():void{
+  public add():void{
     console.log(this.product);
-    this.productService.addProduct(this.product);
+    this.productService.insert(this.product);
   }
 
 }

@@ -1,14 +1,13 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, AlertController, ToastController } from 'ionic-angular';
 import { AuthService } from '../../providers/auth-service/auth-service';
-import { ProductService } from '../../providers/product-service/product-service';
-import { Product } from '../../models/product';
-import { ProductMaintenanceEditPage } from '../../pages/product-maintenance-edit/product-maintenance-edit';
-import { ProductMaintenanceAddPage } from '../../pages/product-maintenance-add/product-maintenance-add';
-
+import { ProductCategoryService } from '../../providers/product-category-service/product-category-service';
+import { ProductCategory } from '../../models/product-category';
+import { ProductCategoryMaintenanceEditPage } from '../product-category-maintenance-edit/product-category-maintenance-edit';
+import { ProductCategoryMaintenanceAddPage } from '../product-category-maintenance-add/product-category-maintenance-add';
 
 /**
- * Generated class for the ProductMaintenancePage page.
+ * Generated class for the ProductCategoryMaintenanceSelectPage page.
  *
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
@@ -16,62 +15,62 @@ import { ProductMaintenanceAddPage } from '../../pages/product-maintenance-add/p
 
 @IonicPage()
 @Component({
-  selector: 'page-product-maintenance',
-  templateUrl: 'product-maintenance.html',
+  selector: 'page-product-category-maintenance-select',
+  templateUrl: 'product-category-maintenance-select.html',
 })
-export class ProductMaintenancePage {
+export class ProductCategoryMaintenanceSelectPage {
 
   private nameToSearch:string;
-  private products: Product[];
+  private productCategorys: ProductCategory[];
 
   constructor(
     public navCtrl: NavController, 
     public navParams: NavParams,
     public authService: AuthService,
-    public productService: ProductService,
+    public productCategoryService: ProductCategoryService,
     public alertCtrl: AlertController,
     public toastCtrl: ToastController) {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad ProductMaintenancePage');
+    console.log('ionViewDidLoad ProductCategoryMaintenanceSelectPage');
   }
 
   public searchProducts(): void {
     console.log('search products start')
     // if the value is an empty string don't filter the items
     if (this.nameToSearch && this.nameToSearch.trim() != '') {
-      this.productService.searchProduct(this.nameToSearch).subscribe(
-        products => {
-          this.products = products;
+      this.productCategoryService.search(this.nameToSearch).subscribe(
+        productCategorys => {
+          this.productCategorys = productCategorys;
         }
       )
     }else{
-      this.products = [];
+      this.productCategorys = [];
     }
   }
 
-  public updateProduct(product:Product){
-    this.navCtrl.push(ProductMaintenanceEditPage, {product: product});
+  public update(productCategory:ProductCategory){
+    this.navCtrl.push(ProductCategoryMaintenanceEditPage, {productCategory: productCategory});
   }
   
-  public addProduct(){
-    this.navCtrl.push(ProductMaintenanceAddPage);
+  public add(){
+    this.navCtrl.push(ProductCategoryMaintenanceAddPage);
   }
 
-  public delProduct(productId:number){
+  public delete(productCatId:number){
     const prompt = this.alertCtrl.create({
-      title: '刪除產品',
-      message: "確定刪除產品?",
+      title: '刪除產品類型',
+      message: "確定刪除產品類型?",
       buttons: [
         {
           text: '確定',
           handler: data => {
             console.log('Saved clicked');
-            this.productService.delProduct(productId).subscribe(result=>{
+            this.productCategoryService.delete(productCatId).subscribe(result=>{
               if(result){
                 let toast = this.toastCtrl.create({
-                  message: '產品已成功刪除',
+                  message: '產品類型已成功刪除',
                   duration: 3000,
                   position: 'top'
                 });
@@ -79,7 +78,7 @@ export class ProductMaintenancePage {
                 this.searchProducts();
               }{
                 let toast = this.toastCtrl.create({
-                  message: '產品刪除失敗',
+                  message: '產品類型刪除失敗',
                   duration: 3000,
                   position: 'top'
                 });
@@ -98,5 +97,4 @@ export class ProductMaintenancePage {
     });
     prompt.present();
   }
-
 }

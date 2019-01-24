@@ -14,7 +14,7 @@
 <ion-content padding>
   <ion-item>
     <span item-start>產品名稱</span>
-    <ion-input name="product_name" type="text" [(ngModel)]="product.name" #pName="ngModel" required></ion-input>
+    <ion-input name="name" type="text" [(ngModel)]="product.name" #pName="ngModel" required></ion-input>
   </ion-item>
   <ion-item>
     <span item-start>高度</span>
@@ -48,6 +48,6 @@
       <ion-option *ngFor="let pc of productCategorys" [value]="pc">{{pc.name}}</ion-option>
     </ion-select>
   </ion-item>
-  <button ion-button (click)="addProduct()">新增</button>
+  <button ion-button (click)="add()">新增</button>
   <button ion-button (click)="cancel()">取消</button>
 </ion-content>

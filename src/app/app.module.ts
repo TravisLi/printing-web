@@ -17,6 +17,10 @@ import { ProductCategorySelectionPageModule } from '../pages/product-category-se
 import { ProductSelectionPageModule } from '../pages/product-selection/product-selection.module';
 import { ProductMaintenanceAddPageModule } from '../pages/product-maintenance-add/product-maintenance-add.module';
 import { ProductMaintenanceEditPageModule } from '../pages/product-maintenance-edit/product-maintenance-edit.module';
+import { ProductMaintenanceSelectPageModule } from '../pages/product-maintenance-select/product-maintenance-select.module';
+import { ProductCategoryMaintenanceAddPageModule } from '../pages/product-category-maintenance-add/product-category-maintenance-add.module'
+import { ProductCategoryMaintenanceEditPageModule } from '../pages/product-category-maintenance-edit/product-category-maintenance-edit.module'
+import { ProductCategoryMaintenanceSelectPageModule } from '../pages/product-category-maintenance-select/product-category-maintenance-select.module'
 
 import { AuthService } from '../providers/auth-service/auth-service';
 import { CustomerService } from '../providers/customer-service/customer-service';
@@ -24,6 +28,7 @@ import { OrderService } from '../providers/order-service/order-service';
 import { ProductService } from '../providers/product-service/product-service';
 import { ProductCategoryService } from '../providers/product-category-service/product-category-service';
 import { MaterialService } from '../providers/material-service/material-service';
+import { DataServiceProvider } from '../providers/data-service/data-service';
 
 @NgModule({
   declarations: [
@@ -41,7 +46,11 @@ import { MaterialService } from '../providers/material-service/material-service'
     ProductCategorySelectionPageModule,
     ProductSelectionPageModule,
     ProductMaintenanceAddPageModule,
-    ProductMaintenanceEditPageModule
+    ProductMaintenanceEditPageModule,
+    ProductMaintenanceSelectPageModule,
+    ProductCategoryMaintenanceAddPageModule,
+    ProductCategoryMaintenanceEditPageModule,
+    ProductCategoryMaintenanceSelectPageModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -57,6 +66,7 @@ import { MaterialService } from '../providers/material-service/material-service'
     ProductService,
     ProductCategoryService,
     MaterialService,
+    DataServiceProvider,
   ]
 })
 export class AppModule {}

@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { ProductCategory } from '../../models/product-category';
+import { BoxComponent } from '../../components/box/box';
 
 /**
  * Generated class for the ProductCategoryBoxComponent component.
@@ -11,20 +12,11 @@ import { ProductCategory } from '../../models/product-category';
   selector: 'product-category-box',
   templateUrl: 'product-category-box.html'
 })
-export class ProductCategoryBoxComponent {
-
-  @Input()
-  productCategory:ProductCategory
-
-  @Output()
-  selectEvent = new EventEmitter<ProductCategory>();
+export class ProductCategoryBoxComponent extends BoxComponent<ProductCategory> {
 
   constructor() {
+    super();
     console.log('Hello ProductCategoryBoxComponent Component');
-  }
-
-  public selectProductCat():void{
-    this.selectEvent.emit(this.productCategory);
   }
 
 }

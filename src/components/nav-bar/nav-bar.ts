@@ -1,5 +1,7 @@
 import { Component, Input } from '@angular/core';
+import { NavController } from 'ionic-angular';
 import { AuthService } from '../../providers/auth-service/auth-service';
+import { LoginPage } from '../../pages/login/login';
 
 /**
  * Generated class for the NavBarComponent component.
@@ -16,12 +18,18 @@ export class NavBarComponent {
   @Input()
   public title:string;
 
-  constructor(private authService:AuthService) {
+  constructor(
+    public navCtrl: NavController,
+    private authService:AuthService) {
     this.title = '';
   }
 
   public logout():void{
-    this.authService.logout();
+    this.authService.logout().subscribe(result=>{
+      if(result){
+        this.navCtrl.setRoot(LoginPage);
+      }
+    });
   }
 
 }
