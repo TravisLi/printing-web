@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { ProductCategory } from '../../models/product-category';
 import { Injectable } from '@angular/core';
-import { DataService } from 'providers/data-service/data-service';
+import { DataService } from '../../providers/data-service/data-service';
 
 /*
   Generated class for the ProductCategoryServiceProvider provider.
@@ -13,7 +13,8 @@ import { DataService } from 'providers/data-service/data-service';
 export class ProductCategoryService extends DataService<ProductCategory>{
 
   constructor(public http: HttpClient) {
-    super('/productCategory', http);
+    super("/productCategory", http);
+    //super();
     console.log('Hello ProductCategoryServiceProvider Provider');
   }
 

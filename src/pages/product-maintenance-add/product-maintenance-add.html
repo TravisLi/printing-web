@@ -44,7 +44,7 @@
   </ion-item>
   <ion-item>
     <ion-label>產品類型</ion-label>
-    <ion-select [(ngModel)]="product.productCategory" [compareWith]="compareFn">
+    <ion-select [(ngModel)]="product.productCategory" [compareWith]="CommonFunction.compareFunction">
       <ion-option *ngFor="let pc of productCategorys" [value]="pc">{{pc.name}}</ion-option>
     </ion-select>
   </ion-item>

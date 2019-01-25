@@ -15,7 +15,7 @@ import { Observable } from 'rxjs';
 export class MaterialService extends DataService<Material> {
 
   constructor(public http: HttpClient) {
-    super('/material',http);
+    super("/material", http);
     console.log('Hello MaterialServiceProvider Provider');
   }
 

@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component } from '@angular/core';
 import { ProductCategory } from '../../models/product-category';
 import { BoxSelectComponent } from '../box-select/box-select';
 

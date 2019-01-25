@@ -14,10 +14,10 @@ import { BoxComponent } from '../../components/box/box';
 export class BoxEditComponent<T> extends BoxComponent<T> {
 
   @Output()
-  private delEvent = new EventEmitter<T>();
+  protected deleteEvent = new EventEmitter<T>();
 
   @Output()
-  private updateEvent = new EventEmitter<T>();
+  protected updateEvent = new EventEmitter<T>();
 
   constructor() {
     super();
@@ -25,9 +25,11 @@ export class BoxEditComponent<T> extends BoxComponent<T> {
   }
 
   public delete():void{
-    this.delEvent.emit(this.content);
+    console.log('Emit delete event');
+    this.deleteEvent.emit(this.content);
   }
   public update():void{
+    console.log('Emit update event');
     this.updateEvent.emit(this.content);
   }
 

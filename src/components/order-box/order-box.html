@@ -12,7 +12,7 @@
       <h2>{{order.date | date:'yyyy 年 M 月 d 日'}}</h2>
     </ion-item>
     <div *ngFor="let product of order.products" no-margin>
-      <product-box [product]="product"></product-box>
+      <!--<product-box [content]="product"></product-box>-->
     </div>
     <ion-item>
       <ion-icon name="trending-down" item-start color="gYellow"></ion-icon>

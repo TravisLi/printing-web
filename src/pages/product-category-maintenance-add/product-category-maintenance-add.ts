@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { ProductCategoryService } from '../../providers/product-category-service/product-category-service';
+import { ProductCategory } from '../../models/product-category';
 
 /**
  * Generated class for the ProductCategoryMaintenanceAddPage page.
@@ -15,11 +17,26 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class ProductCategoryMaintenanceAddPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  public productCategory:ProductCategory
+
+  constructor(
+    public navCtrl: NavController, 
+    public navParams: NavParams,
+    public productCategoryService: ProductCategoryService) {
+      this.productCategory = new ProductCategory();
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad ProductCategoryMaintenanceAddPage');
+  }
+
+  public cancel():void{
+    this.navCtrl.pop();
+  }
+
+  public add():void{
+    console.log(this.productCategory);
+    this.productCategoryService.insert(this.productCategory);
   }
 
 }

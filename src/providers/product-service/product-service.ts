@@ -2,7 +2,6 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Product } from '../../models/product';
 import { Observable } from 'rxjs';
-import { ENV } from '@app/env';
 import { DataService } from '../data-service/data-service';
 
 /*
@@ -15,11 +14,12 @@ import { DataService } from '../data-service/data-service';
 export class ProductService extends DataService<Product>{
 
   constructor(public http: HttpClient) {
-    super('/product', http)
+    super("/product", http);
+    //super();
     console.log('Hello ProductServiceProvider Provider');
   }
 
-  public getByProducCatId(prodCatId:number):Observable<Product[]>{
+  public getByProductCatId(prodCatId:number):Observable<Product[]>{
     console.log('Get By Product Category id');
     let parm:string = DataService.GET + `/${prodCatId}`;
     let reqUrl:string = this.baseUrl + parm;

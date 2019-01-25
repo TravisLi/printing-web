@@ -18,9 +18,9 @@ import { ProductSelectionPageModule } from '../pages/product-selection/product-s
 import { ProductMaintenanceAddPageModule } from '../pages/product-maintenance-add/product-maintenance-add.module';
 import { ProductMaintenanceEditPageModule } from '../pages/product-maintenance-edit/product-maintenance-edit.module';
 import { ProductMaintenanceSelectPageModule } from '../pages/product-maintenance-select/product-maintenance-select.module';
-import { ProductCategoryMaintenanceAddPageModule } from '../pages/product-category-maintenance-add/product-category-maintenance-add.module'
-import { ProductCategoryMaintenanceEditPageModule } from '../pages/product-category-maintenance-edit/product-category-maintenance-edit.module'
-import { ProductCategoryMaintenanceSelectPageModule } from '../pages/product-category-maintenance-select/product-category-maintenance-select.module'
+import { ProductCategoryMaintenanceAddPageModule } from '../pages/product-category-maintenance-add/product-category-maintenance-add.module';
+import { ProductCategoryMaintenanceEditPageModule } from '../pages/product-category-maintenance-edit/product-category-maintenance-edit.module';
+import { ProductCategoryMaintenanceSelectPageModule } from '../pages/product-category-maintenance-select/product-category-maintenance-select.module';
 
 import { AuthService } from '../providers/auth-service/auth-service';
 import { CustomerService } from '../providers/customer-service/customer-service';
@@ -28,7 +28,7 @@ import { OrderService } from '../providers/order-service/order-service';
 import { ProductService } from '../providers/product-service/product-service';
 import { ProductCategoryService } from '../providers/product-category-service/product-category-service';
 import { MaterialService } from '../providers/material-service/material-service';
-import { DataServiceProvider } from '../providers/data-service/data-service';
+import { DataService } from '../providers/data-service/data-service';
 
 @NgModule({
   declarations: [
@@ -66,7 +66,7 @@ import { DataServiceProvider } from '../providers/data-service/data-service';
     ProductService,
     ProductCategoryService,
     MaterialService,
-    DataServiceProvider,
+    DataService,
   ]
 })
 export class AppModule {}

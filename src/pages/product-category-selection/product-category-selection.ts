@@ -25,7 +25,7 @@ export class ProductCategorySelectionPage {
     private platform: Platform,
     private toastCtrl:ToastController,
     private productCatService: ProductCategoryService) {
-      this.productCatService.getAllProductCat().subscribe(productCategorys=>{
+      this.productCatService.getAll().subscribe(productCategorys=>{
         if(productCategorys){
           this.productCategorys = productCategorys;
         }else{

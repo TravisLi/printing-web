@@ -6,6 +6,7 @@ import { ProductCategory } from '../../models/product-category';
 import { ProductService } from '../../providers/product-service/product-service';
 import { ProductCategoryService } from '../../providers/product-category-service/product-category-service';
 import { MaterialService } from '../../providers/material-service/material-service';
+import { CommonFunction } from '../../utils/common-function';
 /**
  * Generated class for the ProductMaintenanceAddPage page.
  *
@@ -57,10 +58,6 @@ export class ProductMaintenanceAddPage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad ProductMaintenanceAddPage');
     
-  }
-
-  public compareFn(o1: any, o2: any): boolean {
-    return o1 && o2 ? o1.id === o2.id : o1 === o2;
   }
 
   public cancel():void{

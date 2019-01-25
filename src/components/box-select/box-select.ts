@@ -22,6 +22,7 @@ export class BoxSelectComponent<T> extends BoxComponent<T>{
   }
 
   public select():void{
+    console.log('Emit select event');
     this.selectEvent.emit(this.content);
   }
 

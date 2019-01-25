@@ -15,6 +15,6 @@
   <ion-searchbar [(ngModel)]="nameToSearch" (ionInput)="search()"></ion-searchbar>
   <button ion-button (click)="add()">新增</button>
   <div *ngFor="let product of products">
-    <product-box-edit [product]="product" (updateEvent)="update($event)" (delEvent)="delete($event)"></product-box-edit>
+    <product-box-edit [content]="product" (updateEvent)="update($event)" (deleteEvent)="delete($event)"></product-box-edit>
   </div>
 </ion-content>

@@ -13,6 +13,6 @@
 
 <ion-content padding>
   <div *ngFor="let productCat of productCategorys" no-margin>
-    <product-category-box [content]="productCat" (selectEvent)="selectProductCategory($event)" ></product-category-box>
+    <product-category-box-select [content]="productCat" (selectEvent)="selectProductCategory($event)"></product-category-box-select>
   </div>
 </ion-content>

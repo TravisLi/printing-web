@@ -2,7 +2,6 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { ENV } from '@app/env';
-import { T, t } from '@angular/core/src/render3';
 
 /*
   Generated class for the DataServiceProvider provider.
@@ -10,6 +9,7 @@ import { T, t } from '@angular/core/src/render3';
   See https://angular.io/guide/dependency-injection for more info on providers
   and Angular DI.
 */
+@Injectable()
 export class DataService<T> {
 
   protected baseUrl:string;
@@ -20,13 +20,13 @@ export class DataService<T> {
   protected static readonly UPDATE:string = '/update';
   protected static readonly DELETE:string = '/delete';
 
-  constructor(baseUrl:string, public http: HttpClient) {
+  constructor(baseUrl:string, protected http: HttpClient) {
     console.log('Hello DataService Provider');
     this.baseUrl = ENV.restUrl + baseUrl;
   }
 
   public getAll():Observable<T[]>{
-    console.log("Get All" + T.name);
+    //console.log("Get All" + T.name);
     let parm:string = DataService.GET + DataService.ALL;
     let reqUrl:string = this.baseUrl + parm;
   
@@ -34,7 +34,7 @@ export class DataService<T> {
   }
 
   public get(id:number):Observable<T>{
-    console.log("Get " + T.name);
+   // console.log("Get " + T.name);
     let parm:string = DataService.GET + `/${id}`;
     let reqUrl:string = this.baseUrl + parm;
     console.log("Id = " + id);
@@ -43,7 +43,7 @@ export class DataService<T> {
   }
 
   public search(name:string):Observable<T[]>{
-    console.log("Search " + T.name);
+    //console.log("Search " + T.name);
     let parm:string = DataService.SEARCH + `/${name}`;
     let reqUrl:string = this.baseUrl + parm;
     console.log("Name = " + name);
@@ -52,7 +52,7 @@ export class DataService<T> {
   }
 
   public insert(obj:T):Observable<Boolean>{
-    console.log("Add " + T.name);
+    //console.log("Add " + T.name);
     let parm:string = DataService.INSERT;
     let reqUrl:string = this.baseUrl + parm;
     console.log(obj);
@@ -61,7 +61,7 @@ export class DataService<T> {
   }
 
   public delete(id:number):Observable<Boolean>{
-    console.log("Delete " + T.name);
+    //console.log("Delete " + T.name);
     let parm:string = DataService.DELETE + `/${id}`;
     let reqUrl:string = this.baseUrl + parm;
     console.log("id = " + id);
@@ -70,7 +70,7 @@ export class DataService<T> {
   }
 
   public update(obj:T):Observable<Boolean>{
-    console.log("Update " + T.name);
+    //console.log("Update " + T.name);
     let parm:string = DataService.UPDATE;
     let reqUrl:string = this.baseUrl + parm;
     console.log(obj);

@@ -6,13 +6,23 @@
 -->
 <ion-header>
 
-  <ion-navbar>
-    <ion-title>product-category-maintenance-edit</ion-title>
-  </ion-navbar>
+  <nav-bar title='更改產品類型'></nav-bar>
 
 </ion-header>
 
 
 <ion-content padding>
+
+  <ion-item>
+    <span item-start>產品類型名稱</span>
+    <ion-input name="name" type="text" [(ngModel)]="productCategory.name" #pName="ngModel" required></ion-input>
+  </ion-item>
+  <ion-item>
+    <span item-start>產品類型照片</span>
+    <img src={{productCategory.image}}/>
+    <ion-input name="image" type="file" [(ngModel)]="productCategory.image" #pImage="ngModel" required></ion-input>
+  </ion-item>
+  <button ion-button (click)="update()">更新</button>
+  <button ion-button (click)="cancel()">取消</button>
 
 </ion-content>

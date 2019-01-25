@@ -7,9 +7,10 @@ import { NavBarComponent } from './nav-bar/nav-bar';
 import { OrderBoxComponent } from './order-box/order-box';
 import { ProductBoxComponent } from './product-box/product-box';
 import { ProductCategoryBoxComponent } from './product-category-box/product-category-box';
+import { ProductCategoryBoxEditComponent } from './product-category-box-edit/product-category-box-edit';
+import { ProductCategoryBoxSelectComponent } from './product-category-box-select/product-category-box-select';
 import { ProductBoxEditComponent } from './product-box-edit/product-box-edit';
 import { ProductBoxSelectComponent } from './product-box-select/product-box-select';
-import { ProductCategoryBoxEditComponent } from './product-category-box-edit/product-category-box-edit';
 @NgModule({
 	declarations: [
     BoxComponent,
@@ -19,16 +20,18 @@ import { ProductCategoryBoxEditComponent } from './product-category-box-edit/pro
     OrderBoxComponent,
     ProductBoxComponent,
     ProductCategoryBoxComponent,
+    ProductCategoryBoxEditComponent,
+    ProductCategoryBoxSelectComponent,
     ProductBoxEditComponent,
-    ProductBoxSelectComponent,
-    ProductCategoryBoxEditComponent],
+    ProductBoxSelectComponent],
 	imports: [IonicModule],
 	exports: [NavBarComponent,
     OrderBoxComponent,
     ProductBoxComponent,
-    ProductCategoryBoxComponent,
     ProductBoxEditComponent,
     ProductBoxSelectComponent,
-    ProductCategoryBoxEditComponent]
+    ProductCategoryBoxComponent,
+    ProductCategoryBoxEditComponent,
+    ProductCategoryBoxSelectComponent]
 })
 export class ComponentsModule {}
