@@ -11,6 +11,9 @@ import { ProductCategoryBoxEditComponent } from './product-category-box-edit/pro
 import { ProductCategoryBoxSelectComponent } from './product-category-box-select/product-category-box-select';
 import { ProductBoxEditComponent } from './product-box-edit/product-box-edit';
 import { ProductBoxSelectComponent } from './product-box-select/product-box-select';
+import { MaterialBoxComponent } from './material-box/material-box';
+import { MaterialBoxSelectComponent } from './material-box-select/material-box-select';
+import { MaterialBoxEditComponent } from './material-box-edit/material-box-edit';
 @NgModule({
 	declarations: [
     BoxComponent,
@@ -23,7 +26,10 @@ import { ProductBoxSelectComponent } from './product-box-select/product-box-sele
     ProductCategoryBoxEditComponent,
     ProductCategoryBoxSelectComponent,
     ProductBoxEditComponent,
-    ProductBoxSelectComponent],
+    ProductBoxSelectComponent,
+    MaterialBoxComponent,
+    MaterialBoxSelectComponent,
+    MaterialBoxEditComponent],
 	imports: [IonicModule],
 	exports: [NavBarComponent,
     OrderBoxComponent,
@@ -32,6 +38,9 @@ import { ProductBoxSelectComponent } from './product-box-select/product-box-sele
     ProductBoxSelectComponent,
     ProductCategoryBoxComponent,
     ProductCategoryBoxEditComponent,
-    ProductCategoryBoxSelectComponent]
+    ProductCategoryBoxSelectComponent,
+    MaterialBoxComponent,
+    MaterialBoxSelectComponent,
+    MaterialBoxEditComponent]
 })
 export class ComponentsModule {}
