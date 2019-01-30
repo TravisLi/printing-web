@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { IonicPageModule } from 'ionic-angular';
+import { ComponentsModule } from '../../components/components.module';
 import { MaterialMaintenanceEditPage } from './material-maintenance-edit';
 
 @NgModule({
@@ -8,6 +9,7 @@ import { MaterialMaintenanceEditPage } from './material-maintenance-edit';
   ],
   imports: [
     IonicPageModule.forChild(MaterialMaintenanceEditPage),
+    ComponentsModule
   ],
 })
 export class MaterialMaintenanceEditPageModule {}

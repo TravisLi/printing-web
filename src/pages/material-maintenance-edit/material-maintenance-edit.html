@@ -22,8 +22,11 @@
   </ion-item>
   <ion-item>
     <ion-label>可選擇此物料之產品類型</ion-label>
-    <ion-select [(ngModel)]="material.productCategorys" [compareWith]="compareFn" multiple="true">
-      <ion-option *ngFor="let pc of material.productCategorys" [value]="pc">{{pc.name}}</ion-option>
+    <ion-select [(ngModel)]="material.productCategorys" [compareWith]="compare" multiple="true">
+      <ion-option *ngFor="let pc of productCategorys" [value]="pc">{{pc.name}}</ion-option>
     </ion-select>
   </ion-item>
+
+  <button ion-button (click)="update()">更新</button>
+  <button ion-button (click)="cancel()">取消</button>
 </ion-content>

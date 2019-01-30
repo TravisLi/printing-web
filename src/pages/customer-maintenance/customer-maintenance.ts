@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { Customer } from '../../models/customer';
 import { AuthService } from '../../providers/auth-service/auth-service';
+import { CustomerService } from '../../providers/customer-service/customer-service';
 
 /**
  * Generated class for the CustomerMaintenancePage page.
@@ -16,10 +18,13 @@ import { AuthService } from '../../providers/auth-service/auth-service';
 })
 export class CustomerMaintenancePage {
 
+  private customers:Customer[];
+
   constructor(
     public navCtrl: NavController, 
     public navParams: NavParams,
-    public authService: AuthService) {
+    public authService: AuthService,
+    public customerService: CustomerService) {
   }
 
   ionViewDidLoad() {
