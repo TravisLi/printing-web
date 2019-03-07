@@ -1,8 +1,11 @@
 import { Product } from './product'
+import { DbObject } from './db-object';
 
-export class ProductCategory{
-    id:number;
+export class ProductCategory extends DbObject{
+    
+    sorting = ['name'];
+   
     name:string;
     image:string;
-    products:Product[];
+    
 }

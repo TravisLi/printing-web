@@ -27,6 +27,7 @@ import { OrderService } from '../providers/order-service/order-service';
 import { ProductCategoryService } from '../providers/product-category-service/product-category-service';
 import { ProductService } from '../providers/product-service/product-service';
 import { MyApp } from './app.component';
+import { HttpModule } from '@angular/http';
 
 @NgModule({
   declarations: [
@@ -36,6 +37,7 @@ import { MyApp } from './app.component';
     BrowserModule,
     IonicModule.forRoot(MyApp,{backButtonText:'',}),
     HttpClientModule,
+    HttpModule,
     ComponentsModule,
     LoginPageModule,
     ChangePasswordPageModule,

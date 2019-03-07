@@ -34,9 +34,25 @@ export class ProductCategoryMaintenanceAddPage {
     this.navCtrl.pop();
   }
 
+  public fileSelect(event):void{
+    Array.from(event.target.files).forEach(
+      (file: File) =>  {
+        console.log(file.name);
+        let fr:FileReader = new FileReader();
+        fr.onloadend = (e) =>{
+          console.log(fr.result.toString());
+          this.productCategory.image = fr.result.toString();
+        }
+        fr.readAsText(file);
+      });
+  }
+
   public add():void{
     console.log(this.productCategory);
-    this.productCategoryService.insert(this.productCategory);
+    //this.productCategoryService.insert(this.productCategory);
+    this.productCategoryService.insert(this.productCategory).subscribe(result=>{
+      console.log(result);
+    })
   }
 
 }

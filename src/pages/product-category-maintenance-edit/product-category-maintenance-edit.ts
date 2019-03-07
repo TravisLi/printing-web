@@ -41,7 +41,7 @@ export class ProductCategoryMaintenanceEditPage {
 
   public add():void{
     console.log(this.productCategory);
-    this.productCategoryService.insert(this.productCategory);
+    //this.productCategoryService.insert(this.productCategory);
   }
 
 }

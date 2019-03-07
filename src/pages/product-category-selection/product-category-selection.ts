@@ -25,7 +25,7 @@ export class ProductCategorySelectionPage {
     private platform: Platform,
     private toastCtrl:ToastController,
     private productCatService: ProductCategoryService) {
-      this.productCatService.getAll().subscribe(productCategorys=>{
+      /*this.productCatService.getAll().subscribe(productCategorys=>{
         if(productCategorys){
           this.productCategorys = productCategorys;
         }else{
@@ -45,7 +45,7 @@ export class ProductCategorySelectionPage {
           position: 'top'
         });
         toast.present();
-      })
+      })*/
   }
 
   ionViewDidLoad() {

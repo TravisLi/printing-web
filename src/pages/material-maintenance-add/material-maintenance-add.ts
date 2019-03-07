@@ -30,14 +30,14 @@ export class MaterialMaintenanceAddPage {
     public productCategoryService: ProductCategoryService) {
       this.material = new Material();
 
-      this.productCategoryService.getAll().subscribe(productCategorys=>{
+      /*this.productCategoryService.getAll().subscribe(productCategorys=>{
         if(productCategorys){
           console.info("Product Category is found")
           this.productCategorys = productCategorys;
         }else{
           console.warn("No productCategory is found")
         }
-      })
+      })*/
   }
 
   ionViewDidLoad() {

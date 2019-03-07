@@ -24,7 +24,7 @@
   <ion-item>
     <span item-start>產品類型照片</span>
     <img src={{productCategory.image}}/>
-    <ion-input name="image" type="file" [(ngModel)]="productCategory.image" accept=".jpg,.jpeg,.png" #pImage="ngModel" required></ion-input>
+    <ion-input name="image" type="file" accept=".jpg,.jpeg,.png" (change)="fileSelect($event)" required></ion-input>
   </ion-item>
   <button ion-button (click)="add()">新增</button>
   <button ion-button (click)="cancel()">取消</button>
