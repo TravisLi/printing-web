@@ -42,13 +42,13 @@ export class DataService<T> {
     return this.http.get<T>(reqUrl);
   }
 
-  public search(name:string):Observable<T[]>{
+  public search(name:string):Observable<Array<T>>{
     //console.log("Search " + T.name);
     let parm:string = DataService.SEARCH + `/${name}`;
     let reqUrl:string = this.baseUrl + parm;
     console.log("Name = " + name);
 
-    return this.http.get<T[]>(reqUrl);
+    return this.http.get<Array<T>>(reqUrl);
   }
 
   public insert(obj:T):Observable<Boolean>{

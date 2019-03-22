@@ -40,10 +40,10 @@ export class ProductCategoryMaintenanceAddPage {
         console.log(file.name);
         let fr:FileReader = new FileReader();
         fr.onloadend = (e) =>{
-          console.log(fr.result.toString());
+          console.log(fr.result);
           this.productCategory.image = fr.result.toString();
         }
-        fr.readAsText(file);
+        fr.readAsDataURL(file);
       });
   }
 

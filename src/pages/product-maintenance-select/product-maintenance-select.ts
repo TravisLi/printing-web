@@ -22,7 +22,7 @@ import { ProductMaintenanceEditPage } from '../product-maintenance-edit/product-
 export class ProductMaintenanceSelectPage {
 
   private nameToSearch:string;
-  private products: Product[];
+  private products: Array<Product>;
 
   constructor(
     public navCtrl: NavController, 
@@ -44,6 +44,9 @@ export class ProductMaintenanceSelectPage {
       this.productService.search(this.nameToSearch).subscribe(
         products => {
           this.products = products;
+          products.forEach(p=>{
+            console.log(p);
+          })
         }
       )
     }else{

@@ -1,5 +1,6 @@
+import { DbKey } from "./db-key";
 export class DbObject{
     
-    protected static sorting:string[]
+    public _id:DbKey;
 
 }

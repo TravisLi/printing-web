@@ -21,7 +21,7 @@ import { ProductCategoryMaintenanceAddPage } from '../product-category-maintenan
 export class ProductCategoryMaintenanceSelectPage {
 
   private nameToSearch:string;
-  private productCategorys: ProductCategory[];
+  private productCategorys: Array<ProductCategory>;
 
   constructor(
     public navCtrl: NavController, 
@@ -40,9 +40,15 @@ export class ProductCategoryMaintenanceSelectPage {
     console.log('search products start')
     // if the value is an empty string don't filter the items
     if (this.nameToSearch && this.nameToSearch.trim() != '') {
-      this.productCategoryService.search(this.nameToSearch).subscribe(
+      let pc:ProductCategory = new ProductCategory();
+      pc.name = this.nameToSearch;
+      this.productCategoryService.search(pc).subscribe(
         productCategorys => {
+          
+          console.log(productCategorys);
+
           this.productCategorys = productCategorys;
+
         }
       )
     }else{
@@ -69,8 +75,9 @@ export class ProductCategoryMaintenanceSelectPage {
           text: '確定',
           handler: data => {
             console.log('Saved clicked');
-            this.productCategoryService.delete(productCat.id).subscribe(result=>{
-              if(result){
+            this.productCategoryService.delete(productCat._id).subscribe(resp=>{
+              console.log(resp.status);
+              if(resp.status===204){
                 let toast = this.toastCtrl.create({
                   message: '產品類型已成功刪除',
                   duration: 3000,
@@ -78,7 +85,7 @@ export class ProductCategoryMaintenanceSelectPage {
                 });
                 toast.present();
                 this.search();
-              }{
+              }else{
                 let toast = this.toastCtrl.create({
                   message: '產品類型刪除失敗',
                   duration: 3000,

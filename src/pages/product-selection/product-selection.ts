@@ -28,7 +28,7 @@ export class ProductSelectionPage {
     private toastCtrl:ToastController,
     private productService: ProductService) {
       let productCat:ProductCategory = navParams.get('productCat');
-      this.productService.getByProductCatId(productCat.id).subscribe(products=>{
+      /*this.productService.getByProductCatId(productCat.id).subscribe(products=>{
         if(products){
           this.products = products;
         }else{
@@ -46,7 +46,7 @@ export class ProductSelectionPage {
             position: 'top'
           });
           toast.present();
-        })
+        })*/
       }
 
   ionViewDidLoad() {
